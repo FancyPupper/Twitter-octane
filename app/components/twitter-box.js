@@ -7,22 +7,27 @@ export default class TwitterBoxComponent extends Component {
 	@tracked error;
 
 	@action
+	handleChange(text){
+		this.text = text;
+	}
+
+	@action
 	onInput (value) {
 		this.error = false;
 		this.text = value;
 	}
 
 	@action
-	async onSubmit () {
-		if (this.args.handleSubmit) {
-			let text = this.text;
-			
-			await this.args.handleSubmit(text);
+	onSubmit () {
+	//	if (this.args.handleSubmit) {
+		let text = this.text;
+		let req =  this.args.handleSubmit(text);
 
-			this.text = null;
-			this.error = false;
-		} else {
-			this.error = true;
-		}
+			//this.text = null;
+			//this.error = false;
+		//} else {
+		//	this.error = true;
+		//}
+		this.text = "";
 	}
 }

@@ -2,15 +2,15 @@
 	<div>
 		<img
 			class="small-avatar"
-			src="https://static.onecms.io/wp-content/uploads/sites/37/2017/05/15215238/102997431.jpg"
+			src={{@data.avatar}}
 		/>
 	</div>
 	<div class="column tweet-content">
 		<div class="row">
 			<p class="user-name">
-				{{if @data.userName @data.userName 'Yvone'}}
+				{{if @data.user_name @data.user_name 'FancyPupper'}}
 			</p>
-			<span class="timestamp">{{@data.createdAt}}</span>
+			<span class="timestamp">{{@data.created_at}}</span>
 		</div>
 		<div class="tweet-info">{{@data.description}}</div>
 	</div>
